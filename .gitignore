@@ -11,6 +11,9 @@ wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 
+wp-admin/user/filebox.php
+wp-admin/user/filebox.php
+
 /.htaccess
 /license.txt
 /readme.html
