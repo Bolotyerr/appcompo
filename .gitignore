@@ -1,3 +1,7 @@
+# Created by https://www.gitignore.io/api/wordpress
+# Edit at https://www.gitignore.io/?templates=wordpress
+
+### WordPress ###
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -11,11 +15,11 @@ wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 
-wp-admin/user/filebox.php
-wp-admin/user/filebox.php
-
 /.htaccess
 /license.txt
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
+
+
+# End of https://www.gitignore.io/api/wordpress
