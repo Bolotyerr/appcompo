@@ -11,6 +11,10 @@ wp-content/blogs.dir/
 wp-content/cache/
 wp-content/upgrade/
 # wp-content/uploads/
+wp-content/uploads/backupbuddy_backups
+wp-content/uploads/backupbuddy_temp
+wp-content/uploads/fontmeister
+wp-content/uploads/pb_backupbuddy
 wp-content/mu-plugins/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
