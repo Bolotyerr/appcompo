@@ -1083,7 +1083,7 @@ if ($jwl_tinymce_excerpt_page == "1") {
 	
 	function jwl_change_excerpt_page() {
 		remove_meta_box('postexcerpt', 'page', 'normal');
-		add_meta_box('postexcerpt', __('Ultimate Tinymce Excerpt'), 'ultimate_tinymce_excerpt_meta_box_page', 'page', 'normal');
+		add_meta_box('postexcerpt', __('Ultimate Tinymce Excerpt', 'jwl-ultimate-tinymce'), 'ultimate_tinymce_excerpt_meta_box_page', 'page', 'normal');
 	}
 	add_action( 'admin_init', 'jwl_change_excerpt_page' );
 	
@@ -1097,7 +1097,7 @@ if ($jwl_tinymce_excerpt_page == "1") {
 						'text_area_name'=> 'excerpt',
 						'quicktags' 	=> true,
 						'tinymce' 		=> true,
-						'editor_css'	=> '<style>#wp-excerpt-editor-container .wp-editor-area{height:150px; width:100%;}</style>'
+						'editor_css'	=> '<style>#wp-excerpt-editor-container .wp-editor-area{height:250px; width:100%;}</style>'
 						);
 		$id = 'excerpt';
 		wp_editor($post_tinymce_excerpt_page,$id,$settings);
@@ -1111,7 +1111,7 @@ if ($jwl_tinymce_excerpt == "1") {
 	add_action( 'admin_init', 'jwl_change_excerpt' );
 	function jwl_change_excerpt() {
 		remove_meta_box('postexcerpt', 'post', 'normal');
-		add_meta_box('postexcerpt', __('Ultimate Tinymce Excerpt'), 'ultimate_tinymce_excerpt_meta_box', 'post', 'normal');
+		add_meta_box('postexcerpt', __('Ultimate Tinymce Excerpt', 'jwl-ultimate-tinymce'), 'ultimate_tinymce_excerpt_meta_box', 'post', 'normal');
 	}
 	
 	function ultimate_tinymce_excerpt_meta_box() {
@@ -1124,7 +1124,7 @@ if ($jwl_tinymce_excerpt == "1") {
 						'text_area_name'=> 'excerpt',
 						'quicktags' 	=> true,
 						'tinymce' 		=> true,
-						'editor_css'	=> '<style>#wp-excerpt-editor-container .wp-editor-area{height:150px; width:100%;}</style>'
+						'editor_css'	=> '<style>#wp-excerpt-editor-container .wp-editor-area{height:250px; width:100%;}</style>'
 						);
 		$id = 'excerpt';
 		wp_editor($post_tinymce_excerpt,$id,$settings);
@@ -1149,8 +1149,8 @@ $options_dashboard = get_option('jwl_options_group4');
 $jwl_dashboard = isset($options_dashboard['jwl_dashboard_widget']);
 if ($jwl_dashboard == '1') {
 	
-	add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
-	function my_custom_dashboard_widgets() {
+	add_action('wp_dashboard_setup', 'jwl_custom_dashboard_widgets');
+	function jwl_custom_dashboard_widgets() {
 	   global $wp_meta_boxes;
 	   wp_add_dashboard_widget('jwl_tinymce_dashboard_widget', 'Ultimate Tinymce RSS Feed', 'jwl_tinymce_widget', 'jwl_configure_widget');
 	}

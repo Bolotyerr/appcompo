@@ -1,8 +1,10 @@
 <?php
 /**
- * The template for displaying posts in the Link Post Format on index and archive pages
+ * Template for displaying posts in the Link Post Format
  *
- * Learn more: http://codex.wordpress.org/Post_Formats
+ * Used on index and archive pages
+ *
+ * @link https://codex.wordpress.org/Post_Formats
  *
  * @package WordPress
  * @subpackage Twenty_Eleven
@@ -31,7 +33,14 @@
 		<?php else : ?>
 		<div class="entry-content">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '</div>' ) ); ?>
+			<?php
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-link"><span>' . __( 'Pages:', 'twentyeleven' ) . '</span>',
+					'after'  => '</div>',
+				)
+			);
+?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 

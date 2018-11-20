@@ -1,49 +1,31 @@
 === Plugin Name ===
-Contributors: dancameron, sproutventure
-Donate link: http://bit.ly/plugin-donations
-Tags: search, search highlight, tag search, category search, category exclusion, comment search, page search, admin, seo, post filter
-Requires at least: 3
-Tested up to: 3.4
-Stable tag: 7.0.1
+Contributors: sovrn, zemanta
+Tags: search, search highlight, tag search, category search, category exclusion, comment search, page search, admin, seo, post filter, research
+Requires at least: 3.6
+Tested up to: 4.7.3
+Stable tag: 8.1.9
 
-Increases Wordpress' default search functionality in three easy steps.
+Search Everything increases WordPress' default search functionality in three easy steps.
 
 
 == Update ==
-
-= Well, we tried... =
-
-It took a few years of kick-starting the Search Everything Plus project and it being subverted by new full-time projects at Sprout Venture before realizing it had to stop. Our goal of fixing WordPress search with SE+ needed too much focus, something we couldn't sacrifice because of growing client projects. After a year of trying and nothing awesome to show we decided to cease all planning and development on the Search Everything Plus plugin/service. </p>
-
-But our goal of fixing WordPress search isn't lost and we have <strong>two</strong> recomendations for you:</p>
-
-[SearchWP](http://s-v.me/RgIu)
-They claim it's the best search plugin around and we can't agree more. It's seriously close to what we had planned for SE+, in many ways it's much better than what we counted on accomplishing.</p>
-
-[Swiftype Search plugin](http://s-v.me/Q8wb)
-It replaces the standard WordPress search with a better, more relevant search engine, and in doing so offloads the performance burden of search queries from your database to theirs.</p>
-
-
-The advantages of both should be clear but if you're undecided we recomend [SearchWP](http://s-v.me/RgIu) becuase of how it doesn't require a subscription.
-	
-Sincerely,
-Dan Cameron
-Principal and Janitor, Sprout Venture Inc.
-
+From Jan 24, 2014 Search Everything originaly developed by dancameron, sproutventure will be maintained and developed further by Zemanta.
 
 == Description ==
 
+Search Everything improves WordPress default search functionality without modifying any of the template pages. You can configure it to search pages, excerpts, attachments, drafts, comments, tags and custom fields (metadata) and you can specify your own search highlight style. It also offers the ability to exclude specific pages and posts. It does not search password-protected content. Simply install, configure... and search.
+
+Search Everything plugin now includes a writing helper called Research Everything that lets you search for your posts and link to them while writing. You can also enable Power Search to research posts from the wider web (for WP3.7 and above).
+
 = Better WordPress search in three steps =
 
-# Activate
-# Configure options
-# Search ( maybe that's only two steps )
+* Activate
+* Configure options
+* Search!
 
-Options include search highlight, searching pages, excerpts, attachments, drafts, comments and custom fields (metadata).
+= What it does =
 
-= What it does: =
-
-Search Everything increases the ability of the default Wordpress Search, options included:
+Search Everything increases the ability of the default Wordpress Search, options include:
 
 * Search Highlighting
 * Search Every Page
@@ -55,7 +37,7 @@ Search Everything increases the ability of the default Wordpress Search, options
 * Search only approved comments
 * Search Every Draft
 * Search Every Excerpt
-* Search Every Attachment (post type)
+* Search Every Attachment (post type, not the content itself - check FAQ)
 * Search Every Custom Field (metadata)
 * Exclude Posts from search
 * Exclude Categories from search
@@ -64,32 +46,45 @@ Search Everything increases the ability of the default Wordpress Search, options
 
 Installation Instructions:
 
-1. Download the plugin and unzip it (didn't you already do this?).
+1. Download the plugin and unzip it.
 2. Put the 'search-everything' directory into your wp-content/plugins/ directory.
 3. Go to the Plugins page in your WordPress Administration area and click 'Activate' next to Search Everything.
-4. Go to the Options >  Search Everything and configure your settings.
-5. That's it. Have fun and if you can contribute (see notes).
-	
-	
+4. Go to the Settings > Search Everything and configure it.
+5. That's it. Enjoy searching.
+
+== Terms of Service ==
+
+The plugin source code is released under GPLv2. Usage of our service is governed by [Zemanta Terms of Service](http://www.zemanta.com/legal/terms-of-service/) and [Zemanta Privacy Policy](http://www.zemanta.com/legal/privacy/).
+
+
 == Frequently Asked Questions ==
+
+= It doesn't search in my PDF/Word/Excel attachments =
+
+We know, this is not a bug. It's not that easy to search through binary files.
+Anyway, if there's a will, there's a way. Just ask us for a workaround and we'll gladly help.
 
 = It doesn't work =
 
 Read the installation guide.
 
-= Where is feature x? =
+= It *still* doesn't work =
 
-[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues"). Label it as a "feature-request"
+Please open a new support topic at our [Support page](http://wordpress.org/support/plugin/search-everything)
 
-= It *still* doesn't work (and you're certain there's a bug) =
+= I don't get any results in research tool =
 
-[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")
+Are you using WordPress 3.6? Sorry, but research tool requires at least version 3.7.
+
 
 = What Translations are included? =
+
+Note: We changed some labels in settings, old translations might not work and need to be updated.
 
 * Arabic
 * Belarusian
 * China / Chinese
+* Czech
 * Dutch
 * French
 * German
@@ -107,14 +102,76 @@ Read the installation guide.
 * Turkish
 * Taiwan / Chinese
 
+= What about Terms of Service and Privacy policy? =
+
+Before using the plugin please read the full version of [Zemanta Terms of Service](http://www.zemanta.com/legal/terms-of-service/) and [Zemanta Privacy Policy](http://www.zemanta.com/legal/privacy/).
+
+
 == Screenshots ==
 
 1. Screenshot of the options panel
+2. Screenshot of the writing helper Research Everything
+3. Screenshot of a post with search results from the Research Everything writing helper
 
-== Help ==
 
-Send me your pull requests on [github](https://github.com/sproutventure/search-everything-wordpress-plugin "github")
+== Changelog ==
+= 8.1.9 =
+* Fixed a search issue that caused all results to be returned regardless of the options.
 
-== Support ==
+= 8.1.8 =
+* Fixed a migration/update issue
 
-[github Issues](https://github.com/sproutventure/search-everything-wordpress-plugin/issues "Github Issues")
+= 8.1.7 =
+* Compatibility with WordPress 4.7
+* Security update: resolve SQL injection vunerability related to WP 4.7
+
+= 8.1.6 =
+* Security update: filtering out empty search strings that could enable sql injections
+
+= 8.1.5 =
+* Compatibility with PHP 7
+* Bypassing highlighting in dashboard searches
+
+= 8.1.4 =
+* Removed unnecessary styles on frontend
+* Fixed php notice showing up sometimes
+* Czech language added
+
+= 8.1.3 =
+* Support for multitag search
+
+= 8.1.2 =
+* CSS bugfix
+
+= 8.1.1 =
+* Security update (CSRF vunerability fix)
+* Added form validation to Options page
+
+= 8.1 =
+* Fixed link search bug
+* Fixed bug of limiting number of results in Research Everything
+* Improved code robustness
+* Fixed translation system
+* Fixed upgrade bug
+* Renamed methods with too generic names
+* Fixed admin notices - they're only visible to admins now
+
+= 8.0 =
+* Added research widget on compose screen
+* Reorganized settings
+* Security updates
+
+= 7.0.4 =
+* Urgent bugfix - changed migration script
+
+= 7.0.3 =
+* Fixed vulnerability issue in se_search_default and started escaping terms
+* Refactored code, extracted html from PHP code
+* Added support for ajax call
+
+
+= 7.0.2 =
+* Added config file with installation and migration functions
+* Refactored code, removed Yes options
+* Replaced deprecated functions
+

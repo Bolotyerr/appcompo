@@ -1,8 +1,8 @@
 <?php
 /**
- * The sidebar containing the front page widget areas.
+ * The sidebar containing the front page widget areas
  *
- * If no active widgets in either sidebar, they will be hidden completely.
+ * If no active widgets are in either sidebar, hide them completely.
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
@@ -15,8 +15,9 @@
  *
  * If none of the sidebars have widgets, then let's bail early.
  */
-if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) )
+if ( ! is_active_sidebar( 'sidebar-2' ) && ! is_active_sidebar( 'sidebar-3' ) ) {
 	return;
+}
 
 // If we get this far, we have widgets. Let do this.
 ?>

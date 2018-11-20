@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Ultimate TinyMCE
- * @version 5.1
+ * @version 5.7
  */
 /*
 Plugin Name: Ultimate TinyMCE
 Plugin URI: http://www.plugins.joshlobe.com/
 Description: Beef up your visual tinymce editor with a plethora of advanced options.
 Author: Josh Lobe
-Version: 5.1
+Version: 5.7
 Author URI: http://joshlobe.com
 
 */
@@ -28,6 +28,52 @@ Author URI: http://joshlobe.com
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+
+//********************************************************************************************
+//
+// Check WP version... and alert user to switch to WP Edit
+//
+//********************************************************************************************
+
+		
+function alert_user_switch_wpedit_admin_notice() {
+	
+	global $current_user;
+	$user_id = $current_user->ID;
+	if(!get_user_meta($user_id, 'switch_utmce_to_wpep')) {
+	
+		echo '<div class="error"><p>';
+		echo 'The Ultimate Tinymce plugin is becoming outdated.  Please consider switching to <a title="WP Edit" target="_blank" href="https://wordpress.org/plugins/wp-edit/">WP Edit</a>.';
+		echo '<br />';
+		echo 'WP Edit is the successor to Ultimate Tinymce.';
+		echo '<br /><br />';
+		echo 'Please deactivate and delete Ultimate Tinymce; then download and activate WP Edit.';
+		echo '<br />';
+		echo 'If any issues are experienced during the transition, support is offered on the <a title="WP Edit Support" target="_blank" href="https://wordpress.org/support/plugin/wp-edit">WP Edit Support Page</a>.';
+		echo '</p><p>';
+		echo 'Alternatively, please visit the <a title="WP Edit Pro" target="_blank" href="https://wpeditpro.com">WP Edit PRO</a> website.';
+		echo '<br />';
+		echo 'WP Edit PRO offers additional, powerful enhancements over the free version.';
+		echo '<br /><br />';
+		printf(__('<a href="%1$s">Hide Notice</a>'), '?switch_wpep_hide_notice=0');
+		echo '</p></div>';
+	}
+}
+add_action('admin_notices', 'alert_user_switch_wpedit_admin_notice');
+
+function switch_wpep_hide_notice() {
+	
+	global $current_user;
+	$user_id = $current_user->ID;
+	if(isset($_GET['switch_wpep_hide_notice']) && $_GET['switch_wpep_hide_notice'] == '0') {
+		
+		add_user_meta($user_id, 'switch_utmce_to_wpep', 'true', true);
+	}
+}
+add_action('admin_init', 'switch_wpep_hide_notice');
+
+
 
 include WP_CONTENT_DIR . '/plugins/ultimate-tinymce/admin_functions.php';
 include WP_CONTENT_DIR . '/plugins/ultimate-tinymce/options_functions.php';
@@ -574,11 +620,11 @@ class jwl_metabox_admin {
             
             <div class="jwl_support_sidebar">
             	<h3><?php _e('Need Support?', 'jwl-ultimate-tinymce'); ?></h3>
-                <p><a target="_blank" href="http://docs.joshlobe.com/"><?php _e('Ultimate Tinymce WIKI', 'jwl-ultimate-tinymce'); ?></a></p>
+                <p><a target="_blank" href="http://ultimatetinymcepro.com/wiki"><?php _e('Ultimate Tinymce WIKI', 'jwl-ultimate-tinymce'); ?></a></p>
                 <p><a target="_blank" href="http://forum.joshlobe.com/member.php?action=register&referrer=1"><?php _e('Dedicated Support Forum', 'jwl-ultimate-tinymce'); ?></a></p>
                 <p><a target="_blank" href="http://www.plugins.joshlobe.com/contact/"><?php _e('Contact Me', 'jwl-ultimate-tinymce'); ?></a></p>
-                <p><a target="_blank" href="http://utmce.joshlobe.com/button-definitions/"><?php _e('Button Definitions', 'jwl-ultimate-tinymce'); ?></a></p>
-                <p><a target="_blank" href="http://utmce.joshlobe.com/other-plugin-features/"><?php _e('Other Plugin Features', 'jwl-ultimate-tinymce'); ?></a></p>
+                <p><a target="_blank" href="http://ultimatetinymcepro.com/button-definitions/"><?php _e('Button Definitions', 'jwl-ultimate-tinymce'); ?></a></p>
+                <p><a target="_blank" href="http://ultimatetinymcepro.com/other-plugin-features/"><?php _e('Other Plugin Features', 'jwl-ultimate-tinymce'); ?></a></p>
             </div> <!-- End Div .jwl_support_sidebar -->
             
             <div class="jwl_follow_sidebar">
@@ -606,11 +652,11 @@ class jwl_metabox_admin {
                     </tr>
                     <tr>
                     <td valign="top"><span style="font-family: &quot;verdana&quot;, &quot;geneva&quot;; font-size: 10pt;"><?php _e('Name:', 'jwl-ultimate-tinymce'); ?></span></td>
-                    <td valign="top"><input value="<?php echo $jwl_blog_title; ?>" size="30" name="YMP1" type="text" /></td>
+                    <td valign="top"><input value="<?php echo $jwl_blog_title; ?>" size="25" name="YMP1" type="text" /></td>
                     </tr>
                     <tr>
                     <td valign="top"><span style="font-family: &quot;verdana&quot;, &quot;geneva&quot;; font-size: 10pt;"><?php _e('Email:', 'jwl-ultimate-tinymce'); ?></span></td>
-                    <td valign="top"><input value="<?php echo $jwl_admin_email; ?>" size="30" name="YMP0" type="text" /></td>
+                    <td valign="top"><input value="<?php echo $jwl_admin_email; ?>" size="25" name="YMP0" type="text" /></td>
                     </tr>
                     <tr>
                     <td colspan="2"><input checked="checked" value="subscribe" name="action" type="radio" /> <span style="font-family: &quot;verdana&quot;, &quot;geneva&quot;; font-size: 10pt;"><?php _e('Subscribe', 'jwl-ultimate-tinymce'); ?></span><input style="margin-left:20px;" value="unsubscribe" name="action" type="radio" /> <span style="font-family: &quot;verdana&quot;, &quot;geneva&quot;; font-size: 10pt;"><?php _e('Unsubscribe', 'jwl-ultimate-tinymce'); ?></span></td>
@@ -796,7 +842,7 @@ function jwl_update_message_cb( /* $plugin_data, $r */ )
     # echo '<pre>'.var_export( $plugin_data, false ).'<br />'.var_export( $r, false ).'</pre>';
 
     // echo stuff....
-    $output = '<span style="margin-left:10px;color:#FF0000;">Please Read Changelog Details Before Upgrading.</span>';
+    $output = '<span style="margin-left:10px;color:#FF0000;">Ultimate Tinymce will NOT function properly with WordPress 3.9 and above.  Please switch to <a href="http://wordpress.org/plugins/wp-edit/" target="_blank">WP Edit</a> instead.</span>';
 	
     return print $output;
 }
@@ -862,8 +908,8 @@ if (!class_exists ('JWL_UtmcePointers')) {
 			return self::$instance;
 		}
 		
-		const DISPLAY_VERSION = 'v5.1';
-		const VERSION = '51';
+		const DISPLAY_VERSION = 'v5.2';
+		const VERSION = '52';
 		
 		function admin_enqueue_scripts () {
 			$dismissed = explode (',', get_user_meta (wp_get_current_user ()->ID, 'dismissed_wp_pointers', true));

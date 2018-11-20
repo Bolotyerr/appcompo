@@ -1,263 +1,257 @@
-=== Google Analytics Dashboard for WP ===
-Contributors: deconf
-Donate link: http://deconf.com/donate/
-Tags: google,analytics,google analytics,dashboard,analytics dashboard,google analytics dashboard,google analytics widget,tracking,realtime,wpmu,multisite
-Requires at least: 2.8
-Tested up to: 3.7.1
-Stable tag: 4.2.3
+=== Google Analytics Dashboard for WP by ExactMetrics (formerly GADWP) ===
+Contributors: chriscct7, smub
+Donate link: http://www.wpbeginner.com/wpbeginner-needs-your-help/
+Tags: analytics,google analytics,google analytics dashboard,google analytics plugin,google analytics widget,gtag
+Requires at least: 3.5
+Tested up to: 4.9
+Stable tag: 5.3.5
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Google Analytics Dashboard for WP will display Google Analytics data and statistics inside your WordPress Blog.
+Connects Google Analytics with your WordPress site. Displays stats to help you understand your users and site content on a whole new level!
 
 == Description ==
-Using a widget, Google Analytics Dashboard displays detailed info and statistics about: number of visits, number of visitors, bounce rates, organic searches, pages per visit directly on your Admin Dashboard.
+This Google Analytics for WordPress plugin enables you to track your site using the latest Google Analytics tracking code and allows you to view key Google Analytics stats in your WordPress install.
 
-Authorized users can also view statistics like Views, UniqueViews and top searches, on frontend, at the end of each article.
+In addition to a set of general Google Analytics stats, in-depth Page reports and in-depth Post reports allow further segmentation of your analytics data, providing performance details for each post or page from your website.
 
-Using this plugin, your data is collected in a fast and secure manner because Google Analytics Dashboard uses OAuth2 protocol and Google Analytics API.
+The Google Analytics tracking code is fully customizable through options and hooks, allowing advanced data collection like custom dimensions and events.
 
-Main benefits:
+= Google Analytics Real-Time Stats =
 
-- you can access all websites statistics in a single widget (websites within same Google Account)
-- real-time feature, displays real-time visitors, real-time sources and per page real-time traffic details
-- cache feature, this improves loading speed up to 7 times and avoids dailyLimitExceeded, usageLimits.userRateLimitExceededUnreg, userRateLimitExceeded errors from Google Analytics API
-- two themes: Blue Theme and Light Theme
-- main dash access level settings and lock profile feature
-- access level settings for Backend statistics and reports
-- access level settings for Frontend data and reports
-- option to display top 24 pages, referrers and searches (sortable by columns)
-- option to display Visitors by Country on Geo Map
-- local websites and business have an option to display cities, instead of countries, on a regional map
-- option to display Traffic Overview in Pie Charts
-- option to display Google Analytics statistics on frontend, at the end of each article
-- simple Authorization process
-- has multilingual support, a POT file is available for translations. If you have a complete translation, send me the translation file or upload it to our forum and will be included in next release.
+Google Analytics reports, in real-time, in your dashboard screen:
 
-This plugin suports Google Analytics tracking. Main tracking options and features:
+- Real-time number of visitors 
+- Real-time acquisition channels
+- Real-time traffic sources details 
 
-- enable/disable google analytics tracking code
-- switch between universal analytics and classic analytics tracking methods
-- supports analytics.js tracking for comaptibility with Universal Analytics web property  
-- supports ga.js tracking for comaptibility with Classic Analytics web property
-- track single domain, domain and all subdomains, multiple TLD domains
-- IP address anonymization feature
-- track events feature: track downloads, emails and outbound links (supported for both tracking methods: classic tracking and universal tracking)
-- exclude traffic based on user level access
+= Google Analytics Reports =
+
+The Google Analytics reports you need, on your dashboard, in your All Posts and All Pages screens, and on site's frontend:  
+
+- Sessions, organic searches, page views, bounce rate analytics stats
+- Locations, pages, referrers, keywords, 404 errors analytics stats
+- Traffic channels, social networks, traffic mediums, search engines analytics stats
+- Device categories, browsers, operating systems, screen resolutions, mobile brands analytics stats
+
+In addition, you can control who can view specific Google Analytics reports by setting permissions based on user roles.
+
+= Google Analytics Tracking =
+
+Installs the latest Google Analytics tracking code and allows full code customization:
+
+- Universal Google Analytics (analytics.js) tracking code
+- Global Site Tag (gtag.js) tracking code
+- Enhanced link attribution
+- Remarketing, demographics and interests tracking
+- Page Speed sampling rate control
+- User sampling rate control
+- Cross domain tracking
+- Exclude user roles from tracking
+- Accelerated Mobile Pages (AMP) support for Google Analytics
+- Ecommerce support for Google Analytics
+
+User privacy oriented features:
+
+- IP address anonymization
+- option to follow Do Not Track (DNT) sent by browsers
+- support for user tracking opt-out
+
+Google Analytics Dashboard for WP enables you to easily track events like:
  
-Related Links:
+- Downloads
+- Emails 
+- Outbound links
+- Affiliate links
+- Fragment identifiers
+- Telephone
+- Page Scrolling Depth
+- Custom event categories, actions and labels using annotated HTML elements
 
-* <a href="http://forum.deconf.com/wordpress-plugins-f182/google-analytics-dashboard-for-wp-translations-t532.html" target="_blank">Support and Google Analytics Dashboard translations</a>
+With Google Analytics Dashboard for WP you can use custom dimensions to track:
 
-* <a href="http://deconf.com/google-analytics-dashboard-wordpress/" title="Google Analytics Dashboard Plugin"  target="_blank">Google Analytics Dashboard Plugin Homepage</a>
+- Authors
+- Publication year
+- Publication month
+- Categories
+- Tags
+- User engagement
+
+Actions and filters are available for further Google Analytics tracking code customization.
+
+= Google Tag Manager Tracking =
+
+As an alternative to Google Analytics tracking code, you can use Google Tag Manager for tracking:
+
+- Google Tag Manager code
+- Data Layer variables: authors, publication year, publication month, categories, tags, user type
+- Exclude user roles from tracking
+- Accelerated Mobile Pages (AMP) support for Google Tag Manager
+
+= Accelerated Mobile Pages (AMP) features =
+
+- Google Tag Manager basic tracking
+- Google Analytics basic tracking 
+- Automatically removes <em>amp/</em> from Google Analytics tracking page URL
+- Scrolling depth tracking
+- Custom dimensions tracking
+- User sampling rate control
+- Form submit tracking
+- File downloads tracking
+- Affiliate links tracking
+- Hashmarks, outbound links, telephones and e-mails tracking
+- Custom event categories, actions and labels using annotated HTML elements
+
+= Google Analytics Dashboard for WP on Multisite =
+
+This plugin is fully compatible with multisite network installs, allowing three setup modes:
+
+- Mode 1: network activated using multiple Google Analytics accounts
+- Mode 2: network activated using a single Google Analytics account
+- Mode 3: network deactivated using multiple Google Analytics accounts
+
+> <strong>Google Analytics Dashboard for WP on GitHub</strong><br>
+> You can submit feature requests or bugs on [the Google Analytics Dashboard for WP by ExactMetrics Github repository](https://github.com/awesomemotive/Google-Analytics-Dashboard-for-WP).
 
 == Installation ==
 
-1. Upload the full directory into your wp-content/plugins directory
-2. Activate the plugin at the plugin administration page
-3. Open the plugin configuration page, which is located under Settings -> GA Dashboard (optionally enter your API Key, Client Secret and Client ID).
-4. Authorize the application using the 'Authorize Application' button
-5. Go back to the plugin configuration page, which is located under Settings -> GA Dashboard to update the final settings.
-
-A step by step tutorial is available here: [Google Analytics Dashboard video tutorial](http://deconf.com/google-analytics-dashboard-wordpress/)
+1. Upload the full google-analytics-dashboard-for-wp directory into your wp-content/plugins directory.
+2. In WordPress select Plugins from your sidebar menu and activate the Google Analytics Dashboard for WP plugin.
+3. Open the plugin configuration page, which is located under Google Analytics menu.
+4. Authorize the plugin to connect to Google Analytics using the Authorize Plugin button.
+5. Go back to the plugin configuration page, which is located under Google Analytics menu to update/set your settings.
+6. Go to Google Analytics -> Tracking Code to configure/enable/disable tracking.
 
 == Frequently Asked Questions == 
 
-= Where can I find my Google API Key, Client Secret, Client ID? =
+= Do I have to insert the Google Analytics tracking code manually? =
 
-Follow this step by step video tutorial: [Google Analytics Dashboard ](http://deconf.com/google-analytics-dashboard-wordpress/)
+No, once the plugin is authorized and a default domain is selected the Google Analytics tracking code is automatically inserted in all webpages.
 
-= I have several wordpress websites do I need an API Project for each one? =
+= Some settings are missing in the video tutorial =
 
-No, you don't. You can use the same API Project (same API Key, Client Secret and Client ID) for all your websites.
+We are constantly improving Google Analytics Dashboard for WP, sometimes the video tutorial may be a little outdated.
 
-= Some settings are missing from your video tutorial ... =
+= How can I suggest a new feature, contribute or report a bug? =
 
-We are constantly improving our plugin, sometimes the video tutorial may be a little outdated.
+You can submit pull requests, feature requests and bug reports on [our GitHub repository](https://github.com/awesomemotive/Google-Analytics-Dashboard-for-WP).
 
-= More Questions? =
+= Documentation, Tutorials and FAQ =
 
-A dedicated section for Wordpress Plugins is available here: [Wordpress Plugins Support](http://forum.deconf.com/wordpress-plugins-f182/)
+For documentation, tutorials, FAQ and videos check out: [Google Analytics Dashboard for WP by ExactMetrics documentation](https://exactmetrics.com/).
 
 == Screenshots ==
 
-1. Google Analytics Dashboard Blue Theme
-2. Google Analytics Dashboard Real-Time
-3. Google Analytics Dashboard Settings
-4. Google Analytics Dashboard Geo Map
-5. Google Analytics Dashboard Top Pages, Top Referrers and Top Searches
-6. Google Analytics Dashboard Traffic Overview
-7. Google Analytics Dashboard statistics per page on Frontend
-8. Google Analytics Dashboard cities on region map
+1. Google Analytics Dashboard for WP Blue Color
+2. Google Analytics Dashboard for WP Real-Time
+3. Google Analytics Dashboard for WP reports per Posts/Pages
+4. Google Analytics Dashboard for WP Geo Map
+5. Google Analytics Dashboard for WP Top Pages, Top Referrers and Top Searches
+6. Google Analytics Dashboard for WP Traffic Overview
+7. Google Analytics Dashboard for WP statistics per page on Frontend
+8. Google Analytics Dashboard for WP cities on region map
+9. Google Analytics Dashboard for WP Widget
+
+== Localization ==
+
+You can translate Google Analytics Dashboard for WP on [translate.wordpress.org](https://translate.wordpress.org/projects/wp-plugins/google-analytics-dashboard-for-wp).
 
 == License ==
 
-This plugin it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
+Google Analytics Dashboard for WP it's released under the GPLv2, you can use it free of charge on your personal or commercial website.
+
+== Upgrade Notice ==
 
 == Changelog ==
 
-= 11.11.2013 - v4.2.3 =
-- time zone fixes
-- hourly reports for yesterday and today
-- small css fix on frontend
+[GADWP v5.3 release notes](https://exactmetrics.com/adding-gtag-js-to-your-site/)
 
-= 06.11.2013 - v4.2.2 =
-- small fixes and update
+= 5.3.5 =
+* Bug Fixes:
+	* Re-tagging release to fix a deployment issue.
 
-= 12.10.2013 - v4.2.1 =
-- fixed Domain and Subdomains tracking code for Universal Analytics 
+= 5.3.4 =
+* Enhancements:
+	* Adds more robust settings to control various ExactMetrics configuration warnings.
+	* Adds the ability to opt-into usage tracking.
+	
 
-= 21.09.2013 - v4.2 =
-- added google analytics real-time support
-- new date ranges: Today, Yesterday, Last 30 Days and Last 90 Days 
+= 5.3.3 =
+* Bug Fixes:
+	* Updated endpoint for GA auth to use updated system.
+	* Fixed a bug where the opt-out and exclude DNT options were listed twice.
 
-= 15.09.2013 - v4.1.5 =
-- fixed "lightblack" color issue, on geomap, on light theme
-- added cursor:pointer property to class .gabutton
+= 5.3.2 =
+* Bug Fixes:	
+	* fixes for user opt-out feature 
+* Enhancements: 
+	* use <em>gadwp_useroptout</em> shortcode to easily generate opt-out buttons and links, [more details](https://exactmetrics.com/google-analytics-gdpr-and-user-data-privacy-compliance)
+	* adding <em>gadwp_gtag_commands</em> and <em>gadwp_gtag_script_path</em> hooks to allow further gtag (Global Site Tag) code customization
+	* adds opt-out and DNT support for Google Tag Manager	
+	
+= 5.3.1.1 =
+* Bug Fixes:	
+	* avoid tracking issues by not clearing the profiles list on automatic token resets
 
-= 09.09.2013 - v4.1.4 =
-- added access level option to Additional Backend Settings section 
-- added access level option to Additional Frontend Settings section
-- new feature for Geo Map allowing local websites to display cities, instead of countries, on a regional map
-- fixed colors for Geo Chart containing world visits by country
+= 5.3.1 =
+* Bug Fixes:	
+	* frontend_item_reports PHP notice when upgrading from a version lower than v4.8.0.1   
 
-= 16.08.2013 - v4.1.3 =
-- solved WooCommerce conflict using .note class
-- added traffic exclusion based on user level access
+= 5.3 =
+* Enhancements: 
+	* adds full support for Global Site Tag (gtag.js)
+	* remove Scroll Depth functionality, since this is now available as a trigger on Google Tag Manager
+	* adds custom dimensions support for AMP pages with Google Tag Manager tracking
+	* adds support for button submits
+* Bug Fixes:	
+	* form submit events were not following the non-interaction settings   
+	
+= 5.2.3.1 =
+* Bug Fixes:	
+	* fixing a small reporting issue 
+	
+= 5.2.3 =
+* Enhancements:
+	* add Google Analytics user opt-out support
+	* add option to exclude tracking for users sending the <em>Do Not Track</em> header
+	* add System tab to Errors & Debug screen
+	* check to avoid using a redeemed access code
+* Bug Fixes:	
+	* remove a debugging message
+	* cURL options were overwritten during regular API calls	
 
-= 29.07.2013 - v4.1.1 =
-- added missing files
-- other minor fixes
+= 5.2.2 =
+* Enhancements:  
+	* more informative alerts and suggestions on the authorization screen
+	* disable autocomplete for the access code input field to avoid reuse of the same unique authorization code
+	* GADWP Endpoint improvements
+	* Error reporting improvements
+	* introducing the gadwp_maps_api_key filter
+* Bug Fixes:	
+	* use the theme color palette for the frontend widget 	 
 
-= 27.07.2013 - v4.1 =
-- added event tracking feature: track downloads, track emails, track outbound links
-- remove trailing comma for IE8 compatibility
+= 5.2.1 =
+* Enhancements:  
+	* avoid submitting empty error reports
+* Bug Fixes:	
+	* fixes a bug for custom PHP cURL options 
+	
+= 5.2 =
+* Enhancements:  
+	* improvements on exponential backoff system
+	* introduces a new authentication method with endpoints
+	* multiple updates of plugin's options
+	* code cleanup
+	* improvements on error reporting system
+	* option to report errors to developer
+	* move the upgrade notice from the Dashboard to plugin's settings page
+	* enable PHP cURL proxy support using WordPress settings, props by [Joe Hobson](https://github.com/joehobson)
+	* hide unusable options based on plugin's settings 
+* Bug Fixes:	
+	* some thrown errors were not displayed on Errors & Debug screen
+	* analytics icon disappears from post list after quick edit, props by [karex](https://github.com/karex)
+	* fix for inline SVG links, props by [Andrew Minion](https://github.com/macbookandrew)
+	* fixes a bug on affiliate events tracking
 
-= 14.07.2013 - v4.0.4 =
-- a better way to retrieve domains and subdomains from profiles
-- remove escaping slashes generating errors on table display
-
-= 21.06.2013 - v4.0.3 =
-- improvements on tracking code
-- redundant variable for default domain name
-- fix for "cannot redeclare class URI_Template_Parser" error
-- added Settings to plugins page
-- modified Google Profiles timeouts
-
-= 29.05.2013 - v4.0.2 =
-- minimize Google Analytics API requests
-- new warnings available on Admin Option Page
-- avoid any unnecessary profile list update
-- avoid errors output for regular users while adding the tracking code
-
-= 29.05.2013 - v4.0.1 =
-- fixed some 'Undefined index' notices
-- cache fix to decrease number of API requests
-
-= 03.05.2013 - v4.0 =
-
-* simplified authorization process for beginners
-* advanced users can use their own API Project
-
-= 30.04.2013 - v3.5.3 =
-
-* translation fix, textdomain ga-dash everywhere
-
-= 25.04.2013 - v3.5.2 =
-
-* some small javascript fixes for google tracking code
-
-= 19.04.2013 - v3.5.1 =
-
-* renamed function get_main_domain() to ga_dash_get_main_domain
-
-= 19.04.2013 - v3.5 =
-
-* small bug fix for multiple TLD domains tracking and domain with subdomains tracking
-* added universal analytics support (you can track visits using analytics.js or using ga.js)
-
-= 17.04.2013 - v3.4.1 =
-
-* switch to domain names instead of profile names on select lists
-* added is_front_page() check to avoid problems in Woocommerce
-
-= 13.04.2013 - v3.4 =
-
-* i8n improvements
-* RTL improvements
-* usability and accessibility improvements
-* added google analytics tracking features
-
-= 10.04.2013 - v3.3.3 =
-
-* a better way to determine temp dir for google api cache
-
-= 09.04.2013 - v3.3.3 =
-
-* added error handles 
-* added quick support buttons
-* added Sticky Notes
-* switched from Visits to Views vs UniqueViews on frontpage
-* fixed select lists issues after implementing translation, fixed frontend default google analytics profile
-* added frontpage per article statistics
-
-= 25.03.2013 - v3.2 =
-
-* added multilingual support
-* small bug fix when locking admins to a single google analytics profile
-
-= 25.03.2013 - v3.1 =
-
-* added Traffic Overview in Pie Charts
-* added lock google analytics profile feature for Admins
-* code optimization
-
-= 25.03.2013 - v3.0 =
-
-* added Geo Map, sortable tables
-* minor fixes
-
-= 22.03.2013 - v2.5 =
-
-* added cache feature
-* simplifying google analytics api authorizing process
-
-= 21.03.2013 - v2.0 =
-
-* added light theme
-* added top pages tab
-* added top searches tab
-* added top referrers tab
-* added display settings
-
-= 20.03.2013 - v1.6 =
-
-* admins can jail access level to a single google analytics profile
-
-= 20.03.2013 - v1.5 =
-
-* added multi-website support
-* table ids and profile names are now automatically retrived from google analytics
-
-= 17.03.2013 - v1.4 =
-
-* added View access levels (be caution, ex: if level is set to "Authors" than all editors and authors will have view access)
-* fixed menu display issue
-
-= 15.03.2013 - v1.3 =
-
-* switch to Google API PHP Client 0.6.1
-* resolved some Google Analytics Dashboard conflicts
-
-= 13.03.2013 - v1.2.1 =
-
-* minor fixes on google analytics api
-* added video tutorials
-
-= 12.03.2013 - v1.2 =
-
-* minor fixes
-
-= 11.03.2013 - v1.0 =
-
-* first release
+The full changelog is [available here](https://exactmetrics.com/changelog-google-analytics-dashboard-for-wp/).
