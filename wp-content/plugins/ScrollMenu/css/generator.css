@@ -1,0 +1,65 @@
+#mig-scroll-menu-generator-wrap { display: none }
+#mig-scroll-menu-generator {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+#mig-scroll-menu-generator-shell { padding: 20px 10px }
+#mig-scroll-menu-generator-settings {
+	padding: 20px;
+}
+#mig-scroll-menu-generator-header {
+	height: 30px;
+	margin-bottom: 20px;
+}
+#mig-scroll-menu-generator-select { width: 350px }
+#mig-scroll-menu-generator-tools {
+	float: right;
+	padding-top: 5px;
+}
+#mig-scroll-menu-generator-settings label {
+	float: left;
+	display: block;
+	width: 200px;
+	padding: 5px;
+	
+}
+#mig-scroll-menu-generator-settings input[type="text"] {
+	width: 300px;
+	padding: 5px 8px;
+}
+#mig-scroll-menu-generator-settings select { width: 300px }
+.mig-scroll-menu-loading-animation {
+	min-height: 100px;
+	background: 50% 50% url(../images/admin/loading.gif) no-repeat;
+}
+.mig-scroll-menu-loading-animation * { display: none }
+#mig-scroll-menu-generator-insert {
+	color: #fff !important;
+	font-weight: bold;
+}
+
+/* Color picker */
+.mig-scroll-menu-generator-select-color {
+	position: relative;
+}
+.mig-scroll-menu-generator-select-color-wheel {
+	position: absolute;
+	left: 0;
+	top: 23px;
+	display: none;
+	background: #fff;
+	border: 1px solid #aaa;
+	z-index: 9999;
+	box-shadow: 0 2px 5px #ccc;
+	-moz-box-shadow: 0 2px 5px #ccc;
+	-webkit-box-shadow: 0 2px 5px #ccc;
+}
+
+.mig-scroll-menu-divider {
+    border-bottom: 1px solid #CFCFCF;
+    border-top: 1px solid #EAEAEA;
+    margin: 5px 0;
+}

@@ -1,0 +1,65 @@
+/* Clearfix */
+	
+	.clear	{
+	clear:both;
+	display:block;
+	height:0;
+	overflow:hidden;
+	visibility:hidden;
+	width:0
+	}
+	
+	.clearfix:after	{
+	clear:both;
+	content:' ';
+	display:block;
+	font-size:0;
+	height:0;
+	line-height:0;
+	visibility:hidden;
+	width:0
+	}
+	
+	
+	a {border:none;}
+	
+
+/*======================= Scroll menu styles ============================*/
+
+	.mig-scroll-menu-container {
+    overflow: hidden;
+	}
+
+	.mig-scroll-button-class {
+	cursor:pointer;
+	margin: 0px 0px 0.2em 0px;
+    padding: 0.5em 0.6em;
+    text-transform: capitalize;
+	z-index:99999;
+	}
+	
+	.mig-scroll-menu-container.One div, .scroll-backgroundpreload.One{
+	background-repeat: repeat;
+	background-position: left top;
+	background-image: url(../images/scrollstyle-one.png); 
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+	}
+	
+	.mig-scroll-menu-container.Two div, .scroll-backgroundpreload.Two{
+	background-repeat: repeat-x;
+	background-position: center;
+	background-image: url(../images/scrollstyle-two.png);
+	padding: 0.8em 0.6em;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.2);
+	}
+	
+	.mig-scroll-menu-container.Three div, .scroll-backgroundpreload.Two{
+	background-repeat: repeat-x;
+	background-position: left top;
+	background-image: url(../images/scrollstyle-three.png);
+	padding:0.6em;
+	}
+	
+	.mig-scroll-menu-container.Four div, .scroll-backgroundpreload.Three{
+	border-radius:6px;
+	}
