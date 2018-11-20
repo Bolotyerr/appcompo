@@ -1,0 +1,31 @@
+/* Clearfix */
+
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+/* Fonts */
+.vamtam-font( @prefix: primary-font- ) {
+	@font-weight: e( "var( --vamtam-@{prefix}font-weight )" );
+	@font-size: e( "var( --vamtam-@{prefix}font-size )" );
+	@line-height: e( "var( --vamtam-@{prefix}line-height )" );
+	@font-family: e( "var( --vamtam-@{prefix}font-family )" );
+
+	font: e( %( '%s %s/%s %s', @font-weight, @font-size, @line-height, @font-family ) );
+}
+
+.vamtam-font-no-weight( @prefix: primary-font- ) {
+	@font-size: e( "var( --vamtam-@{prefix}font-size )" );
+	@line-height: e( "var( --vamtam-@{prefix}line-height )" );
+	@font-family: e( "var( --vamtam-@{prefix}font-family )" );
+
+	font: e( %( '%s/%s %s', @font-size, @line-height, @font-family ) );
+}

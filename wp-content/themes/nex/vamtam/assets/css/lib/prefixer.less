@@ -1,0 +1,38 @@
+/* Fonts -------------------------------------------------------------------- */
+.vamtam-font( @prefix: primary-font- ) {
+	@font-weight: e( "var( --vamtam-@{prefix}font-weight )" );
+	@font-style: e( "var( --vamtam-@{prefix}font-style )" );
+	@font-size: e( "var( --vamtam-@{prefix}font-size )" );
+	@line-height: e( "var( --vamtam-@{prefix}line-height )" );
+	@font-family: e( "var( --vamtam-@{prefix}font-family )" );
+
+	font: e( %( '%s %s %s/%s %s', @font-weight, @font-style, @font-size, @line-height, @font-family ) );
+}
+
+.vamtam-font-no-weight( @prefix: primary-font- ) {
+	@font-size: e( "var( --vamtam-@{prefix}font-size )" );
+	@line-height: e( "var( --vamtam-@{prefix}line-height )" );
+	@font-family: e( "var( --vamtam-@{prefix}font-family )" );
+
+	font: e( %( '%s/%s %s', @font-size, @line-height, @font-family ) );
+}
+
+.placeholders( @color ) when ( iscolor( @color ) ) {
+	&::-webkit-input-placeholder {
+		color: @color;
+		opacity: 0.7;
+	}
+
+	&:-ms-input-placeholder {
+		color: @color;
+		opacity: 0.7;
+	}
+
+	&::placeholder {
+		color: @color;
+		opacity: 0.7;
+	}
+}
+
+.placeholders( @color ) when not ( iscolor( @color ) ) { // empty
+}

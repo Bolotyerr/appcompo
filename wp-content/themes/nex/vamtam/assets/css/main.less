@@ -1,0 +1,468 @@
+/* Hide these as soon as possible */
+header.main-header .sub-menu {
+	display: none;
+}
+
+::selection {
+	color: var( --vamtam-accent-color-1-readable );
+	background: var( --vamtam-accent-color-1 );
+}
+
+html,
+#main-content {
+	background: var( --vamtam-body-background-background-image ) var( --vamtam-body-background-background-position ) / var( --vamtam-body-background-background-size ) var( --vamtam-body-background-background-repeat ) var( --vamtam-body-background-background-attachment ) var( --vamtam-body-background-background-color );
+}
+
+.vamtam-main {
+	padding-bottom: 0.009px;
+
+	background: var( --vamtam-main-background-background-image ) var( --vamtam-main-background-background-position ) / var( --vamtam-main-background-background-size ) var( --vamtam-main-background-background-repeat ) var( --vamtam-main-background-background-attachment ) var( --vamtam-main-background-background-color );
+}
+
+
+.limit-wrapper {
+	display: block;
+	margin: auto;
+	max-width: var( --vamtam-site-max-width );
+	width: auto;
+
+	> div {
+		position: relative;
+	}
+}
+
+#page {
+	margin-right: auto;
+	margin-left: auto;
+	min-width: var( --vamtam-site-max-width );
+	width: auto;
+
+	body.responsive-layout & {
+		min-width: 300px;
+	}
+
+	body.boxed & {
+		max-width: calc( var( --vamtam-site-max-width ) + 2 * ( var( --vamtam-box-outer-padding ) + var( --vamtam-beaver-global-module_margins ) ) );
+	}
+
+	.boxed-layout {
+		position: relative;
+	}
+}
+
+#main-content {
+	position: relative;
+	z-index: 9;
+
+	body.fl-builder-active & {
+		z-index: auto;
+	}
+}
+
+.fl-builder-edit body {
+	padding-bottom: 0.01px;
+}
+
+body.full {
+	#page .boxed-layout {
+		max-width: 100%;
+	}
+}
+
+.single-product {
+	&.layout-right-only {
+		.right {
+			padding-top: 0;
+		}
+	}
+}
+
+.page-wrapper {
+	position: relative;
+	display: flex;
+
+	> aside.left  {
+		margin-right: 5%;
+		padding-left: var( --vamtam-beaver-global-module_margins );
+		max-width: var( --vamtam-left-sidebar-width );
+		flex: 0 1 var( --vamtam-left-sidebar-width ) ;
+		order: 1;
+	}
+
+	> aside.right {
+		margin-left: 5%;
+		padding-right: var( --vamtam-beaver-global-module_margins );
+		max-width: var( --vamtam-right-sidebar-width );
+		flex: 0 1 var( --vamtam-right-sidebar-width ) ;
+		order: 10;
+	}
+
+	.vamtam-body-sidebar {
+		box-sizing: border-box;
+		min-height: 1px;
+		margin-top: 40px;
+	}
+
+	> article {
+		position: relative;
+		box-sizing: border-box;
+		padding-top: 0.035px; // the top padding prevents margins from collapsing
+		flex: 1000 1 calc( 100% - var( --vamtam-left-sidebar-width ) - var( --vamtam-right-sidebar-width ) ); // grow as much as necessary
+		order: 2;
+		max-width: 100%;
+
+		&.left-right {
+			background: var( --vamtam-default-bg-color );
+		}
+
+		body.page-template-page-blank-php & {
+			padding-bottom: 0;
+		}
+
+		> .page-content {
+			body:not(.fl-builder) &,
+			body.woocommerce.single & {
+				padding-bottom: 40px;
+			}
+		}
+	}
+}
+
+body.single-post .layout-left-only .post-content,
+body.single-post .layout-right-only .post-content,
+body.single-post .layout-left-right .post-content {
+	.fl-row-fixed-width {
+		max-width: inherit;
+	}
+	.fl-row-full-width .fl-row-fixed-width {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+}
+
+.archive.post-type-archive-product .page-wrapper > article {
+	margin-top: 0px;
+}
+
+.fl-builder {
+	.page-wrapper {
+		> aside.left  {
+			margin-right: 3%;
+		}
+
+		> aside.right {
+			margin-left: 3%;
+		}
+	}
+	&.archive .page-wrapper > article {
+		margin-top: 40px;
+		padding-bottom: 20px;
+	}
+	.meta-header {
+		padding-bottom: 0.035px;
+	}
+	.wp-caption.alignleft {
+		margin-left: -30px;
+	}
+}
+
+
+
+
+body.no-page-header {
+	&.no-breadcrumbs {
+		#sub-header {
+			&.layout-left-only,
+			&.layout-left-right {
+				.meta-header {
+					.meta-header-inside {
+						padding: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.boxed-layout {
+	img {
+		box-sizing: border-box;
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+	}
+
+	iframe, object, embed {
+		display: block;
+		max-width: 100%;
+	}
+}
+
+.vamtam-video-frame iframe {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+}
+
+code,
+kbd,
+pre,
+samp {
+	-webkit-hyphens: none;
+	-moz-hyphens:    none;
+	hyphens:         none;
+	font-size: 14px;
+	font-family: monospace, serif;
+	-ms-hyphens:     none;
+}
+
+pre,
+.wire-pad {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 8px;
+	padding: 20px;
+}
+
+pre {
+	border: 1px solid var( --vamtam-default-line-color );
+	background: var( --vamtam-accent-color-5 );
+	font-size: var( --vamtam-primary-font-font-size );
+	line-height: 1.5em;
+
+	.toggle & {
+		padding: 0 !important;
+		border: none;
+	}
+}
+
+code {
+	padding: 0;
+}
+
+.post-article .mejs-container .mejs-controls {
+	background: var( --vamtam-accent-color-1 );
+	bottom: 15px;
+	width: 90%;
+	margin-left: 5%;
+}
+
+.post-article .mejs-container {
+	border-radius: var( --vamtam-border-radius );
+	background: var( --vamtam-accent-color-1 );
+	height: 70px !important;
+}
+
+.post-article .mejs-controls .mejs-time-rail {
+	.mejs-time-loaded {
+		background: var( --vamtam-accent-color-5 );
+	}
+
+	.mejs-time-current {
+		background: var( --vamtam-accent-color-6 );
+	}
+}
+
+.error-message {
+	.clearfix;
+	transition: opacity .2s linear .7s !important;
+	position   : absolute;
+	top        : 0;
+	left       : 100% !important;
+	z-index    : 100000;
+	display    : block;
+	overflow   : visible;
+	margin-top : -13px;
+	margin-left: 2px;
+	padding    : 0.5em;
+	height     : 16px;
+	background : none repeat scroll 0 0 #D94729 !important;
+	box-shadow : 0 0 0 1px #D94729 inset;
+	color: #ffffff;
+	white-space: nowrap;
+	line-height: 16px;
+
+	&:before {
+		position: absolute;
+		top     : 50%;
+		left    : 0;
+		margin-top  : -6px;
+		margin-left : -8px;
+		width   : 0;
+		height  : 0;
+		border-width: 6px 6px 6px 0;
+		border-style: inset solid inset none;
+		border-color: transparent #D94729 transparent transparent;
+		content : "";
+	}
+}
+
+.author-info-box {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid var( --vamtam-default-line-color );
+
+	.author-avatar {
+		float: left;
+	}
+
+	.author-description {
+		overflow: hidden;
+		padding-left: 20px;
+
+		> h4 {
+			margin-top: 0;
+		}
+	}
+
+	+ .no-posts-by-author {
+		padding-top: 40px;
+		text-align: center;
+	}
+}
+
+.vamtam-scroll-to-top.vamtam-circle {
+	@size: 45px;
+	border-radius: 500px;
+	width: @size;
+	height: @size;
+	line-height: @size;
+	display: inline-block;
+	text-align: center;
+}
+
+.vamtam-only-title {
+	display: none;
+}
+
+body.wp-customizer-unloading {
+	&:after {
+		content: var( --vamtam-loading-animation );
+		position: absolute;
+		top: calc( ~"50% - 35px" );
+		left: calc( ~"50% - 35px" );
+	}
+}
+
+.gmpInfoWindowtitle {
+	margin: 10px 0 10px 6px !important;
+}
+
+.jp-carousel-titleanddesc {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 2em;
+}
+
+.jp-carousel-left-column-wrapper {
+	margin: auto;
+	.jp-carousel-titleanddesc-title {
+		font-size: 1em !important;
+	}
+}
+.jp-carousel-image-meta {
+	display: none;
+}
+
+.vamtam-testimonials-slider {
+	margin-bottom: 50px !important;
+}
+
+.fl-tabs-horizontal .fl-tabs-labels {
+	text-align: center;
+	font-size: 0px;
+}
+.fl-tabs-horizontal .fl-tabs-label {
+	float: none;
+	display: inline-block;
+	font-size: initial;
+}
+.fl-tabs-horizontal .fl-tabs-panels .fl-tabs-label{
+	display: none;
+}
+.fl-tabs-horizontal .fl-tabs-label {
+	font-weight: bold;
+	color: var( --vamtam-accent-color-2 );
+	cursor: pointer;
+
+	&:hover {
+		color: var( --vamtam-accent-color-1 );
+	}
+
+	&.fl-tab-active {
+		color: var( --vamtam-accent-color-1 );
+	}
+}
+.fl-module-vamtam-cta .fl-cta-image{
+	width: 15%;
+}
+.fl-module-vamtam-cta .fl-cta-image img{
+	border-radius: 10em;
+	overflow: hidden;
+	border: 6px solid var( --vamtam-accent-color-7 );
+}
+.fl-module-vamtam-cta .fl-cta-inline .fl-cta-image + .fl-cta-text {
+	padding-right: 10%;
+}
+.fl-module-vamtam-cta h3.fl-cta-title {
+	padding-bottom: 0px;
+}
+.fl-module-vamtam-cta p {
+	margin-top: 0.2em;
+}
+
+/* Trip Advisor Widget fix */
+
+.cdsROW .cdsRating span {
+	padding-top: 10px;
+	display: inline-block;
+}
+
+.cdsROW.wide {
+	margin: auto;
+	border: solid 1px #6aa257;
+	border-radius:60px;
+	padding: 5px 15px;
+}
+
+.rotatingrotation {
+	transform: rotate( 90deg );
+	opacity: 0;
+}
+
+body.wpb-js-composer {
+	.wpb_start_animation.animated {
+		animation-iteration-count: 1 !important;
+	}
+}
+
+.vamtam-responsive-wrapper {
+	position: relative;
+	width: 100%;
+	opacity: 0;
+	transition: opacity .2s ease-out;
+
+	&.image-loaded {
+		opacity: 1;
+	}
+}
+
+.vamtam-lazyload-noparent[srcset] {
+	opacity: 0;
+	transition: opacity .2s ease-out;
+
+	&.image-loaded {
+		opacity: 1;
+	}
+}
+
+#vamtam-no-search-results {
+	text-align: center;
+	margin-top: 35px;
+}
+
+html.ios-safari * {
+	background-attachment: scroll !important;
+}

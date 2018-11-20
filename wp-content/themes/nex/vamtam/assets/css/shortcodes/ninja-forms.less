@@ -1,0 +1,64 @@
+.nf-form-fields-required {
+	display: none;
+}
+body {
+	.nf-field-element {
+		textarea {
+			height: 150px;
+		}
+	}
+	.nf-input-limit {
+		margin: 0px;
+	}
+	.nf-field-container {
+		margin-bottom: 0px;
+	}
+
+	.nf-error {
+		input, select, textarea {
+			border-color: #FA374F !important;
+		}
+	}
+	.nf-error-wrap {
+		margin-top: -8px;
+		min-height: 22px;
+
+		.nf-error-msg {
+			font-size: 12px;
+			line-height: 1.2em;
+			background: #ffeeee;
+			padding: 0.2em 0.7em;
+			margin: 0px;
+			border-radius: var( --vamtam-border-radius-oval );
+
+			&:before {
+				content: "ⓘ";
+				font-size: 13px;
+				color: #e80000;
+				padding-right: 5px;
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.nf-response-msg {
+		margin: 20px 0;
+		padding: 1em 1em 0em 1em;
+		text-align: center;
+		background: #EEFCE0;
+		border: 1px solid #CBEDAA;
+	}
+	.nf-debug-msg {
+		background: #FCEFD0;
+	}
+	.label-hidden .nf-field-label {
+		display: none;
+	}
+
+}
+
+.field-wrap input[type="button"] {
+	.button-gen-solid();
+	.button-gen( '--vamtam-accent-color-1' );
+	.button-gen-hover( '--vamtam-accent-color-6' );
+}

@@ -1,0 +1,154 @@
+@import '../mixins.less';
+
+.widget {
+	margin: 0 auto 30px;
+	padding: 0;
+
+	.widgettitle {
+		position: relative;
+		overflow: hidden;
+		margin: 0px;
+		padding: 0px 0px 10px 0px;
+
+		&, a {
+			word-wrap: break-word;
+			.vamtam-font(h3-);
+			font-weight: 400;
+			color: var( --vamtam-accent-color-3 );
+		}
+
+		> .icon {
+			margin-right: 10px;
+			vertical-align: baseline;
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border-bottom: 0;
+		background: transparent;
+	}
+	&.widget_archive,
+	&.widget_categories,
+	&.widget_meta {
+		li a {
+			line-height: 1.7em;
+		}
+	}
+	&.widget_recent_entries {
+		li {
+			padding: 10px 0px 10px 0px;
+		}
+		a {
+			.vamtam-font(h5-);
+			display: inline;
+		}
+		.post-date {
+			.vamtam-font(h6-);
+			display: block;
+			padding-top: 5px;
+		}
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		transition: all .2s ease;
+
+		text-overflow: ellipsis;
+		word-wrap: break-word;
+		.vamtam-font(primary-font-);
+		line-height: 1em;
+
+		a {
+			display: inline-block;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&.recentcomments {
+			color: var( --vamtam-accent-color-3 );
+			padding: 5px 0px;
+		}
+
+		.count {
+			color: var( --vamtam-accent-color-3 );
+			font-size: calc( var( --vamtam-primary-font-font-size ) - 2px );
+		}
+	}
+
+	select {
+		max-width: 100%;
+	}
+
+	.lang_sel_click li {
+		overflow: visible;
+	}
+}
+
+/* Widgets in sidebars ------------------------------------------------------ */
+.widget-box {
+
+	&:after {
+		position: relative;
+		top: 10px;
+		display: block;
+		clear : both;
+		margin: 0 -10px;
+		height : 1px;
+		content: "";
+	}
+}
+
+.vamtam-body-sidebar {
+	.widget {
+		margin: 0 0px 40px 0px;
+		padding: 0;
+
+		.widgettitle {
+			background: transparent;
+
+			> .icon {
+				margin-top: -3px;
+
+				&.shortcode {
+					color: var( --vamtam-accent-color-7 );
+				}
+			}
+
+			+ ul,
+			+ ol,
+			+ div,
+			+ form {
+				border: none;
+			}
+		}
+
+		> ul,
+		> ol,
+		> div,
+		> h4+form {
+			.widget-box;
+		}
+	}
+}
+
+/* Widgets in footer -------------------------------------------------------- */
+#main-footer .widget {
+	.widgettitle {
+		white-space: normal;
+	}
+}
+

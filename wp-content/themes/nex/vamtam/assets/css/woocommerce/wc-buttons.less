@@ -1,0 +1,78 @@
+.woocommerce {
+	// all buttons' selectors must be here
+	#respond #commentform .form-submit input[type="submit"],
+	.add_review a.button,
+	#payment #place_order,
+	.woocommerce-message .button,
+	.return-to-shop .button,
+	body& .page-wrapper #submit,
+	body& .button.single_add_to_cart_button,
+	input.button {
+		.button-gen-solid();
+		.button-gen( '--vamtam-accent-color-1' );
+		.button-gen-hover( '--vamtam-accent-color-6' );
+	}
+
+	&.woocommerce-cart .cart-collaterals {
+		.button {
+			.button-gen-solid();
+			.button-gen( '--vamtam-accent-color-1' );
+			.button-gen-hover( '--vamtam-accent-color-6' );
+
+			&:disabled {
+				border: solid 1px var( --vamtam-default-line-color );
+				padding: 14px 29px;
+				background: transparent;
+				box-shadow: none;
+			}
+		}
+
+		.checkout-button {
+			.button-gen( '--vamtam-accent-color-1' );
+			.button-gen-hover( '--vamtam-accent-color-6' );
+			margin-right: 0px;
+			display: block;
+		}
+	}
+
+	.button.ajax_add_to_cart {
+		color: var( --vamtam-body-link-regular );
+		&:focus {
+			outline: none !important;
+		}
+
+		&:not(.added):focus .icon,
+		&:after {
+			color: var( --vamtam-accent-color-1 );
+		}
+
+		.icon {
+			color: var( --vamtam-body-link-regular );
+		}
+
+		&.added {
+			&:after {
+				display: inline-block;
+				height: auto;
+				line-height: 1em;
+				vertical-align: top;
+				margin-left: 10px;
+			}
+
+			+ .added_to_cart {
+				opacity: 0;
+			}
+		}
+
+		&:hover {
+			.icon {
+				color: var( --vamtam-body-link-hover );
+			}
+		}
+
+		&.loading:after {
+			top: 1em;
+			right: 0.7em;
+		}
+	}
+}

@@ -1,0 +1,176 @@
+.form-input {
+	position: relative;
+	margin: 0;
+	background: var( --vamtam-accent-color-7 );
+
+	.required {
+		display: none;
+	}
+}
+.main-container {
+	input[type=text],
+	input[type=tel],
+	input[type=email],
+	input[type=password],
+	input[type=email],
+	input[type=search],
+	input[type=date],
+	input[type=range],
+	input[type=number],
+	input[type=button],
+	input[type=tel],
+	textarea,
+	select {
+		box-sizing: border-box;
+		padding: 14px 25px;
+		height: auto;
+		width: 100%;
+		position: relative;
+		outline: none;
+		border: solid 1px var( --vamtam-accent-color-4 );
+		margin: 0;
+		color: var( --vamtam-accent-color-6 );
+		background: var( --vamtam-main-background-background-color );
+		margin-bottom: 10px;
+		transition: all 0.4s;
+		font-size: var( --vamtam-primary-font-font-size );
+		line-height: 1.1em;
+		border-radius: var( --vamtam-border-radius-oval );
+		font-family: var( --vamtam-primary-font-font-family );
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+
+		&:hover {
+			border: 1px solid var( --vamtam-accent-color-1 );
+		}
+		&:focus {
+			border: 1px solid var( --vamtam-accent-color-1 );
+		}
+
+		&.invalid {
+			border-color: #D94729;
+		}
+
+		&:-moz-ui-invalid {
+			border-color: #D94729;
+		}
+
+		.vamtam-main & {
+			color: var( --vamtam-accent-color-2 );
+			background: var( --vamtam-main-background-background-color );
+		}
+	}
+	input[type=range] {
+		padding: inherit;
+	}
+	textarea {
+		border-radius: 0px;
+		margin-bottom: 5px !important;
+	}
+	.vamtam-form-remove-border {
+		input[type=text],
+		input[type=tel],
+		input[type=email],
+		input[type=password],
+		input[type=email],
+		input[type=search],
+		input[type=date],
+		input[type=range],
+		input[type=number],
+		input[type=tel],
+		textarea,
+		select {
+			border: transparent;
+		}
+	}
+
+	input[type=button] {
+		&:hover, &:focus  {
+			border: none;
+		}
+	}
+	 select {
+		background: transparent url("data:image/svg+xml;utf8,<svg fill='black' height='25' viewBox='0 0 24 24' width='50' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right center !important;
+		padding-right: 40px !important;
+		margin-bottom: 10px !important;
+	}
+}
+
+label {
+	font-size: 12px;
+}
+
+textarea {
+	min-height: 4em;
+	width: 100%;
+	position: relative;
+	resize: none;
+}
+
+body .pika-single.is-bound {
+	border-radius: var( --vamtam-border-radius );
+	background: var( --vamtam-accent-color-5 );
+	border: none;
+	box-shadow: 0 1px 20px 0 rgba(0,0,0,0.08);
+	color: var( --vamtam-accent-color-3 );
+
+	table {
+		margin: 0px;
+	}
+
+	.pika-day{
+		display: block;
+		transition: all 0.2s ease;
+		border-radius: var( --vamtam-border-radius );
+		padding: 4px 5px;
+		font-size: 12px;
+		border: solid 1px transparent;
+		color: var( --vamtam-accent-color-3 );
+		background: var( --vamtam-accent-color-5 );
+
+			&:hover {
+				color: var( --vamtam-accent-color-1-hc );
+				background: var( --vamtam-accent-color-1 );
+			}
+	}
+	.is-selected .pika-day {
+		color: var( --vamtam-accent-color-1-hc );
+		background: var( --vamtam-accent-color-1 );
+		box-shadow: none;
+	}
+
+	th {
+		color: var( --vamtam-accent-color-2 );
+		font-size: 11px;
+		font-weight: normal;
+	}
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	background: transparent;
+	border: 1px solid transparent;
+	color: initial;
+	text-align: center;
+}
+.ui-widget-content {
+	background: transparent;
+}
+
+.ui-widget-header {
+	background: transparent;
+	border: none;
+	font-weight: initial;
+
+	.ui-icon {
+		background: none;
+	}
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+	background: none;
+	border-color: transparent;
+	border: none;
+}

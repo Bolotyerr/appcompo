@@ -1,0 +1,210 @@
+// common styles for dynamically generated buttons (to be used with .button-gen())
+.button-gen-common() {
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	vertical-align: middle;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	text-decoration: none;
+	text-shadow: none;
+	-webkit-font-smoothing: auto;
+	transition: color .3s ease-out, border .3s ease-out, background .3s ease-out, box-shadow .3s ease-out !important; // !important necessary for RevSlider compatibility (>=5.1)
+
+	font: normal 14px/1em var( --vamtam-primary-font-font-family );
+
+	&:focus {
+		outline: 1px dotted #000;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.button-gen-solid() {
+	.button-gen-common();
+	border-radius: 0px;
+	border: none;
+	padding: 16px 30px;
+	-webkit-font-smoothing: auto;
+}
+
+.button-gen-underline-common() {
+	line-height: 1.2em;
+	padding: 0px 0px 2px 0px;
+	border-bottom: 2px solid;
+}
+
+.button-gen-underline() {
+	.button-gen-common();
+	.button-gen-underline-common();
+}
+
+.button-gen-common-sc() {
+	.button-gen-common();
+
+	&.button-solid {
+		.button-gen-solid();
+	}
+
+	&.button-border {
+		border-radius: 0px;
+		box-shadow: none;
+		padding: 14px 29px;
+		border: 1px solid;
+	}
+
+	&.button-underline {
+		.button-gen-underline-common();
+	}
+}
+
+// mixins for generating button styles based on their background color
+//
+// this MUST include only colors
+
+.button-gen( @bgcolor ) {
+	background: var( e( @bgcolor ) );
+	color: var( e( "@{bgcolor}-hc" ) );
+	box-shadow: 0 0 25px -14px var( e( @bgcolor ) );
+}
+
+.button-gen-border( @bgcolor ) {
+	background: var( e( "@{bgcolor}-transparent" ) );
+	color: var( e( @bgcolor ) );
+	border-color: var( e( @bgcolor ) );
+}
+
+.button-gen-sc( @bgcolor ) {
+	&.button-solid {
+		.button-gen( @bgcolor );
+	}
+
+	&.button-border,
+	&.button-underline {
+		.button-gen-border( @bgcolor )
+	}
+}
+
+/////////////////
+
+.button-gen-hover( @bgcolor ) {
+	&:hover {
+		background: var( e( @bgcolor ) );
+		color: var( e( "@{bgcolor}-hc" ) );
+		box-shadow: 0 0 25px -14px var( e( @bgcolor ) );
+	}
+}
+
+.button-gen-border-hover( @bgcolor ) {
+	&:hover {
+		border-color: var( e( @bgcolor ) );
+		background: var( e( @bgcolor ) );
+		color: var( e( "@{bgcolor}-hc" ) );
+	}
+}
+
+.button-gen-underline-hover( @bgcolor ) {
+	&:hover {
+		color: var( e( @bgcolor ) );
+		border-color: var( e( @bgcolor ) );
+	}
+}
+
+.button-gen-hover-sc( @bgcolor ) {
+	&.button-solid {
+		.button-gen-hover( @bgcolor );
+	}
+
+	&.button-border {
+		.button-gen-border-hover( @bgcolor );
+	}
+
+	&.button-underline {
+		.button-gen-underline-hover( @bgcolor );
+	}
+}
+
+/////////////////////////////////////////////////////
+
+// submit buttons and a catch-all selector which may style some plugins
+
+.button,
+input[type=button],
+input[type=submit] {
+	.button-gen-solid();
+	.button-gen-common();
+
+	.button-gen( '--vamtam-accent-color-1' );
+	.button-gen-hover( '--vamtam-accent-color-6' );
+}
+
+// actual buttons below
+
+.vamtam-button {
+	.button-gen-common-sc();
+
+	&.accent1 { .button-gen-sc( '--vamtam-accent-color-1' ); }
+
+	&.accent2 { .button-gen-sc( '--vamtam-accent-color-2' ); }
+
+	&.accent3 { .button-gen-sc( '--vamtam-accent-color-3' ); }
+
+	&.accent4 { .button-gen-sc( '--vamtam-accent-color-4' ); }
+
+	&.accent5 { .button-gen-sc( '--vamtam-accent-color-5' ); }
+
+	&.accent6 { .button-gen-sc( '--vamtam-accent-color-6' ); }
+
+	&.accent7 { .button-gen-sc( '--vamtam-accent-color-7' ); }
+
+	&.accent8 { .button-gen-sc( '--vamtam-accent-color-8' ); }
+
+	&.hover-accent1 { .button-gen-hover-sc( '--vamtam-accent-color-1' ); }
+
+	&.hover-accent2 { .button-gen-hover-sc( '--vamtam-accent-color-2' ); }
+
+	&.hover-accent3 { .button-gen-hover-sc( '--vamtam-accent-color-3' ); }
+
+	&.hover-accent4 { .button-gen-hover-sc( '--vamtam-accent-color-4' ); }
+
+	&.hover-accent5 { .button-gen-hover-sc( '--vamtam-accent-color-5' ); }
+
+	&.hover-accent6 { .button-gen-hover-sc( '--vamtam-accent-color-6' ); }
+
+	&.hover-accent7 { .button-gen-hover-sc( '--vamtam-accent-color-7' ); }
+
+	&.hover-accent8 { .button-gen-hover-sc( '--vamtam-accent-color-8' ); }
+}
+
+
+/* RevSLider Buttons */
+
+.rev-btn.rev-withicon i.vamtam-arrow-right-sample,
+.rev-btn.rev-withicon i.vamtam-arrow-left-sample,
+.rev-btn.rev-withicon i.vamtam-arrow-top-sample,
+.rev-btn.rev-withicon i.vamtam-arrow-bottom-sample {
+	margin: 0px !important;
+	font-size: 24px;
+	font-family: theme;
+}
+.vamtam-arrow-left-sample:before {
+	content: icon( vamtam-theme-arrow-left-sample );
+}
+.vamtam-arrow-right-sample:before {
+	content: icon( vamtam-theme-arrow-right-sample );
+}
+.vamtam-arrow-top-sample:before {
+	content: icon( vamtam-theme-arrow-top-sample );
+}
+.vamtam-arrow-bottom-sample:before {
+	content: icon( vamtam-theme-arrow-bottom-sample );
+}
+
+/* Underline buttons */
+

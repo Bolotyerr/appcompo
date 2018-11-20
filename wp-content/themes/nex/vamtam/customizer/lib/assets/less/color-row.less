@@ -1,0 +1,40 @@
+.vamtam-color-row-group-wrapper {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+
+	.vamtam-color-row-single-color-wrapper {
+		width: 50%;
+		padding-right: .5em;
+		box-sizing: border-box;
+
+		&:nth-child( 2n ) {
+			padding-left: .5em;
+			padding-right: 0;
+		}
+
+		&:nth-child(2n) .wp-picker-holder {
+			transform: translateX( calc( ~"-100% - .75em" ) );
+		}
+	}
+
+	.wp-picker-open + .wp-picker-input-wrap {
+		display: block;
+	}
+
+	.wp-color-result::after {
+		min-width: 79px;
+	}
+
+	.wp-picker-container {
+		max-width: 100%;
+	}
+
+	.wp-picker-input-wrap {
+		min-width: 150px;
+	}
+}
+
+.vamtam-color-row-single-color-wrapper > label {
+	display: block;
+}
