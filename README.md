@@ -1,1 +1,2 @@
 # appcompo
+Auteur : Terry Lobeau
